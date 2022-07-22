@@ -1,0 +1,21 @@
+from boltiot import Bolt
+import keyboard
+api_key="b0fa042d-087d-4472-9ab8-efbd79d5cbfa"
+device_id="BOLT13167933"
+mybolt=Bolt(api_key,device_id)
+response=mybolt.serialRead('10')
+def F():
+    mybolt.serialWrite('F')
+def B():
+    mybolt.serialWrite('B')
+def R():
+    mybolt.serialWrite('R')
+def L():
+    mybolt.serialWrite('L')
+def S():
+    mybolt.serialWrite('S')
+keyboard.add_hotkey('w',lambda:F())
+keyboard.add_hotkey('s',lambda:B())
+keyboard.add_hotkey('a',lambda:R())
+keyboard.add_hotkey('d',lambda:L())
+keyboard.add_hotkey('r',lambda:S())
